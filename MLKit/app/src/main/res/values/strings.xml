@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MLKit</string>
+    <string name="text_will_be_shown_here">Text will be shown here!!</string>
+    <string name="text">Text:</string>
+</resources>
