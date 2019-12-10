@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/Search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/SearchForProject"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/projectFindByname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/findProjectname"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/buttonProjectFindByName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Find" />
+
+    <EditText
+        android:id="@+id/projectFindByKey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/projectFindByKey"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/buttonProjectFindByKey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Find" />
+
+    <Button
+        android:id="@+id/buttonBack2Main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back" />
+
+    <ListView
+        android:id ="@+id/findProjectListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

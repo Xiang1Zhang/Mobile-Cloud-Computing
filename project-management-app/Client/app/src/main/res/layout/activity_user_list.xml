@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/Add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/addMemberstoProject"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/userFindbyName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/UserFindbyName"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/findByName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/UserFindbyName" />
+
+    <Button
+        android:id="@+id/finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/finish" />
+    <ListView
+        android:id ="@+id/userlistView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

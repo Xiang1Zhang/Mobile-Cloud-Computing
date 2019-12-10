@@ -1,0 +1,455 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: Endpoints API
+  description: Endpoints API for backend deploy
+host: "mcc-fall-2019-g25.appspot.com"
+basePath: /
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /task:
+    post:
+      description: Create
+      summary: Create
+      operationId: Create
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/Task'
+      responses:
+        201:
+          description: Task is Created
+          schema:
+            $ref: '#/definitions/Task'
+        default:
+          description: Default
+          schema:
+            $ref: '#/definitions/Error'
+  /tasks/{projectID}:
+    get:
+      description: get tasks
+      summary: get tasks
+      operationId: gettasks
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: projectID
+        in: path
+        required: true
+        type: integer
+        format: int32
+        description: project id
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Task'
+        default:
+          description: Default
+          schema:
+            $ref: '#/definitions/Error'
+  /task/{id}:
+    put:
+      description: Update
+      summary: Update
+      operationId: Update
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/Task'
+      responses:
+        200:
+          description: Created
+          schema:
+            $ref: '#/definitions/Task'
+        default:
+          description: Default
+          schema:
+            $ref: '#/definitions/Error'
+  /project:
+    post:
+      description: Create a project
+      summary: Create a project
+      operationId: Createaproject
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/Project'
+      responses:
+        201:
+          description: Task is Created
+          schema:
+            $ref: '#/definitions/Project'
+        default:
+          description: Default
+          schema:
+            $ref: '#/definitions/Error'
+  /project/{id}:
+    get:
+      description: get project info
+      summary: get project info
+      operationId: getprojectinfo
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: integer
+        format: int32
+        description: project id
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Project'
+        default:
+          description: Default
+          schema:
+            $ref: '#/definitions/Error'
+    delete:
+      description: Delete
+      summary: Delete
+      operationId: Delete
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: delete OK
+        default:
+          description: Default
+          schema:
+            $ref: '#/definitions/Error'
+    put:
+      description: Update
+      summary: Update1
+      operationId: Update1
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/Project'
+      responses:
+        201:
+          description: Created
+          schema:
+            $ref: '#/definitions/Project'
+        default:
+          description: Default
+          schema:
+            $ref: '#/definitions/Error'
+  /project/isFavoriteU/{userID}:
+    put:
+      description: UpdateFav
+      summary: UpdateFav
+      operationId: UpdateFav
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: userID
+        in: path
+        required: true
+        type: integer
+        format: int32
+        description: user id
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/Project'
+      responses:
+        201:
+          description: Created
+          schema:
+            $ref: '#/definitions/Project'
+        default:
+          description: Default
+          schema:
+            $ref: '#/definitions/Error'
+  /projects/{userID}:
+    get:
+      description: get projects belongs to one user
+      summary: get projects belongs to one user
+      operationId: getprojectsbelongstooneuser
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: userID
+        in: path
+        required: true
+        type: integer
+        format: int32
+        description: user id
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Project'
+        default:
+          description: Default
+          schema:
+            $ref: '#/definitions/Error'
+  /user:
+    post:
+      description: Create a User
+      summary: Create a User
+      operationId: CreateaUser
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/User'
+      responses:
+        201:
+          description: Task is Created
+          schema:
+            $ref: '#/definitions/User'
+        default:
+          description: Default
+          schema:
+            $ref: '#/definitions/Error'
+  /user/updpsw/{id}:
+    put:
+      description: Update user password
+      summary: Update user password
+      operationId: Updateuserpassword
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: body
+        in: body
+        required: false
+        description: ''
+        schema:
+          $ref: '#/definitions/User'
+      responses:
+        200:
+          description: Created
+          schema:
+            $ref: '#/definitions/User'
+        default:
+          description: Default
+          schema:
+            $ref: '#/definitions/Error'
+  /user/{id}:
+    get:
+      description: get a user info
+      summary: get a user info
+      operationId: getauserinfo
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: integer
+        format: int32
+        description: user id
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/User'
+        default:
+          description: Default
+          schema:
+            $ref: '#/definitions/Error'
+  /users/{name}:
+    get:
+      description: get user by query user name
+      summary: get user by query user name
+      operationId: getuserbyqueryusername
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: path
+        required: true
+        type: string
+        description: user id
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+        default:
+          description: Default
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Task:
+    title: Task
+    type: object
+    properties:
+      id:
+        type: string
+      projectID:
+        type: string
+      description:
+        type: string
+        minLength: 1
+        maxLength: 100
+      status:
+        $ref: '#/definitions/Status'
+        minLength: 1
+      deadline:
+        type: string
+        format: date-time
+    required:
+    - projectID
+    - description
+    - status
+    - deadline
+  Project:
+    title: Project
+    type: object
+    properties:
+      id:
+        type: string
+      description:
+        type: string
+        minLength: 1
+      name:
+        type: string
+        minLength: 1
+        maxLength: 100
+      isPersonal:
+        $ref: '#/definitions/IsPersonal'
+        minLength: 1
+      modificationDate:
+        type: string
+        format: date-time
+      creationDate:
+        type: string
+        format: date-time
+      administrator:
+        type: string
+      collaborators:
+        type: array
+        items:
+          type: string
+      isFavorite:
+        type: object
+
+    required:
+    - description
+    - name
+    - isPersonal
+    - administrator
+
+  User:
+    title: User
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+        minLength: 1
+        maxLength: 100
+      email:
+        type: string
+      password:
+        type: string
+    required:
+    - name
+    - email
+    - password
+  Error:
+    title: Error
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+    required:
+    - code
+    - message
+  IsPersonal:
+    title: IsPersonal
+    example: Personal
+    type: string
+    enum:
+    - Personal
+    - Group
+  Status:
+    title: Status
+    example: pending
+    type: string
+    enum:
+    - pending
+    - ongoing
+    - completed
+tags: []

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.example.client">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <dist:module dist:instant="true" />
+
+    <application
+        android:name=".FirebaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Client"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui.generateProjectPDF.GenerateProjectPDF"></activity>
+        <activity android:name=".ui.searchProject.ProjectInfoShowActivity" />
+        <activity android:name=".ui.searchProject.SearchProjectActivity" />
+        <activity android:name=".ui.auth.UserProfileActivity" />
+        <activity android:name=".ui.auth.UserUpdateActivity" />
+        <activity android:name=".ui.createProject.UserListActivity" />
+        <activity android:name=".ui.createProject.CreateProjectActivity" />
+        <activity android:name=".ui.auth.SignupActivity" />
+        <activity android:name=".ui.taskList.TaskListActivity" />
+        <activity android:name=".ui.taskList.main.CreateTaskActivity" />
+        <activity android:name=".ui.taskList.main.UploadFile" />
+        <activity android:name=".ui.taskList.main.UploadImage" />
+        <activity android:name=".ui.auth.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.projectList.ProjectListActivity" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.client.ui.taskList.main"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>
